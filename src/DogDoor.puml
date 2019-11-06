@@ -1,0 +1,25 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+Class DogDoor {
+- boolean open
++ open()
++ close()
++ isOpen()
+}
+
+Class Remote{
+- DogDoor door
++ pressButton()
+}
+
+Class BarkRecogniser{
+- DogDoor door
++ recognise()
+}
+
+DogDoor "1" <-- "1" Remote : controls
+DogDoor "1" <-- "1" BarkRecogniser : controls
+
+@end num1
